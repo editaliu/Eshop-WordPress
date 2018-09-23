@@ -1,0 +1,503 @@
+$grey-back: gainsboro;
+$pure-green: green;
+$green-back: darkseagreen;
+$all-font: 'Forum',
+cursive;
+
+body {
+    font-family: $all-font;
+    font-size: 18px;
+    color: black;
+    background-color: #ffffff;
+    /*    margin-top: 50px;*/
+    /*    line-height: normal;*/
+    margin: 0;
+}
+
+/*TEISINGAI SKAICIUOJA PLOCIUS*/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.title {
+    background-color: $grey-back;
+}
+
+/*ALL CONTAINERS IN CENTER// TURINIO ATITRAUKIMAS NUO KRASTU*/
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto; //    padding-bottom: 3em;
+    /*    margin: 0 auto; veikia tik td kai yra width nustatytas kazkoks*/
+}
+
+.flex-container {
+    display: flex;
+}
+
+.title > .flex-container,
+.goods > .flex-container {
+    justify-content: space-between;
+}
+
+
+/*START LOGO*/
+
+.logo-div {
+    padding: 1rem 0;
+}
+
+.nav-brand {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: $pure-green;
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 3rem;
+    /*    SUMAZINA SPACE PO IR VIRS H1*/
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.nav-brand > img {
+    max-width: 70px;
+    background-color: $pure-green;
+    border-radius: 40px;
+}
+
+/*END LOGO*/
+
+.title > .flex-container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*MENU START*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    a {
+        display: block;
+        padding: 14px 20px;
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+    }
+}
+
+/*zalias pasilieka ir ant li ir eina per dropdown*/
+
+li:hover > a,
+li a:active {
+    background-color: $pure-green;
+    color: black;
+    border-radius: 15px;
+}
+
+/*DROPDOWN CONTENT*/
+
+ul li ul li {
+    float: none;
+    display: none;
+    background-color: #00934A;
+    border-radius: 15px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+ul li:hover ul li {
+    display: block;
+}
+
+.dropdown-content {
+    position: absolute;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    text-align: left;
+}
+
+.icon {
+    display: none;
+}
+
+/*MENU END*/
+
+/*PO KIEKVIENO SECTION ESANTYS KONTEINIARIAI TURES ATITRAUKIMA NUO VIRSAUS IR APACIOS*/
+
+section > .container {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+}
+
+
+//PLACEHOLDER FOR SECTION WITH IMAGE BACKGROUND
+%pav-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+//PLACEHOLDER FOR ALL HEADINGS
+%headh2 {
+    letter-spacing: 0.1em;
+}
+
+/*HERO BANER START (TROPIKAI)*/
+
+.hero {
+    @extend %pav-background;
+    background-image: url('../pav/baner/jungle.jpg');
+}
+
+.hero h2 {
+    @extend %headh2;
+    color: $pure-green;
+}
+
+/*HERO BUTTON*/
+
+%button {
+    background-color: $pure-green;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: white;
+    border-radius: 5px;
+}
+
+.button:hover,
+.shop-button:hover {
+    background-color: #04580A;
+}
+
+.shop-button {
+    @extend %button;
+    font-size: 1.3rem;
+    padding: 28px 80px 25px;
+    border-bottom: none;
+    text-decoration: none;
+    /*    mygtukas igauna ir block ir inline savybes atsistoja i centra(inline) ir atsitraukia nuo virsaus(block)*/
+    display: inline-block;
+    margin: 80px;
+}
+
+/*END HERO BANER(TROPIKAI)*/
+
+/*GOODS START*/
+
+.goods {
+    background-color: $grey-back;
+}
+
+.section-heading {
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 3rem;
+    font-size: 1.5rem;
+}
+
+.greens > h2 {
+    @extend %headh2;
+    color: $pure-green;
+}
+
+/*LINIJA AFTER HEADING*/
+
+%lineafter {
+    content: "";
+    display: block;
+    width: 90px;
+    border-top: 4px solid;
+    margin: 10px auto;
+}
+
+.greens h2::after {
+    @extend %lineafter;
+    border-top-color: $pure-green;
+}
+
+.things,
+.one-icon {
+    text-align: center;
+    padding: 10px;
+}
+
+.things img,
+.one-icon img {
+    width: 100%;
+}
+
+.a-goods {
+    text-decoration: none;
+}
+
+.a-goods:hover {
+    filter: brightness(60%);
+    transition: all 1s ease;
+}
+
+.a-goods > h3 {
+    text-decoration: none;
+    color: black;
+}
+
+/*GOODS END*/
+
+//START HOW IT WORKS
+.how {
+    @extend %pav-background;
+    background-image: url('../pav/baner/0557a49d0f32599.jpg');
+}
+
+.one-icon img {
+    border-radius: 50%;
+}
+
+.light {
+    @extend %headh2;
+    color: $grey-back;
+}
+
+.light h2::after {
+    @extend %lineafter;
+    border-top-color: $grey-back;
+}
+
+.one-icon p {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $grey-back;
+}
+
+//END HOW IT WORKS
+//START ABOUT US
+.about {
+    background-color: $grey-back;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.lines-container {
+    display: block;
+}
+
+//END ABOUT US
+//START CONTACTS
+.contact {
+    @extend %pav-background;
+    background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/VVyyFcyDl/shining-light-green-blue-grey-abstract-bokeh-background-bokeh-holiday-ornaments-bright-spot-defocused-circle-brilliant_4hcwhbqwx__F0000.png');
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+//TRANSPARENT FONAS ANT PAVEIKSLELIO
+.transp {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-bottom: 2rem;
+}
+
+.all-forms {
+    display: flex;
+}
+
+.contact-info {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    display: block;
+    flex: 1;
+    font-size: 1.4rem;
+    color: #011d16;
+}
+
+p a {
+    text-decoration: none;
+    color: black;
+    color: #011d16;
+}
+
+.forma {
+    padding-top: 2rem;
+    display: block;
+    flex-direction: column;
+    flex: 1;
+}
+
+.name-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-style {
+    width: 100%;
+    font-family: $all-font;
+    background-color: $grey-back;
+    font-size: 1.3rem;
+    border: none;
+    padding: 1em;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+}
+
+.first {
+    margin-right: 1rem;
+}
+
+.button {
+    @extend %button;
+    width: 10rem;
+    font-size: 1rem;
+    background-color: $pure-green;
+    box-shadow: 10px 10px 25px black;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+//END CONTACTS
+//START FOOTER
+.foot {
+    background-color: $pure-green;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.social ul > li {
+    display: inline-block;
+}
+
+.social > ul li > a {
+    padding: 50px 10px 10px;
+    opacity: .4;
+}
+
+.social > ul li > a:hover {
+    color: white;
+}
+
+.copyright {
+    color: $grey-back;
+    font-size: 1.1rem;
+}
+
+.edith {
+    color: black;
+    opacity: .4;
+    font-weight: 600;
+}
+
+.edith:hover {
+    color: white;
+}
+
+//END FOOTER
+//START RESPONSIVE
+@media screen and (max-width: 1200px) {
+    .how > .flex-container,
+    .contact > .transp > .all-forms,
+    .about > .container,
+    .title > .container {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .name-row {
+        display: flex;
+        flex-direction: column;
+    }
+    .how > .flex-container,
+    .contact > .transp > .all-forms,
+    .about > .container {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+    .contact-info {
+        flex: 1;
+    }
+    .forma {
+        flex: 2;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    //    START RESPONSIVE NAVIGATION
+    .top-nav > li:not(:first-child) {
+        display: none;
+
+    }
+    .top-nav > li:first-child {
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+
+    .dropdown-content {
+        position: absolute;
+    }
+    .icon {
+        float: right;
+        display: block;
+        padding-right: 2rem;
+        color: black;
+    }
+    .nav-bar > .flex-container {
+        flex-direction: column;
+    }
+    .top-nav > li.show {
+        display: block;
+    } //END RESPONSIVE NAVIGATION 700px
+    //    START SHOP NOW RESPONSIVE 700px
+    .hero h2 {
+        color: white;
+    }
+    .shop-button {
+        letter-spacing: 0.1em;
+        padding: 20px 50px 20px;
+    } //    END SHOP NOW RESPONSIVE 700px
+    //    START sections RESPONSIVE 700px
+    .goods > .flex-container,
+    .how > .flex-container,
+    .contact > .transp > .all-forms {
+        flex-wrap: wrap;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        justify-content: center;
+    }
+    .about > .container {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .one-icon,
+    .pav-fonas {
+        max-width: 10rem;
+    } //    END sections RESPONSIVE 700px
+    //    VIDEO RESPONSIVE 700px
+    object {
+        width: 200px;
+    } //    START CONTACT RESPONSIVE 700px
+    .forma,
+    .contact-info {
+        flex: auto;
+    }
+    .name-row {
+        display: flex;
+        flex-direction: column;
+    } //    END CONTACT RESPONSIVE 700px
+}
